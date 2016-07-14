@@ -4,8 +4,9 @@
 let React = require('react');
 let ReactDOM = require('react-dom');
 let PropTypes = React.PropTypes;
-let styles = require('./styles/index');
 let Home = require('./components/Home.js');
+
+require('./styles/main.scss');
 
 // Render Home
 ReactDOM.render(

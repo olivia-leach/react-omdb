@@ -9,7 +9,9 @@ let Home = React.createClass({
   render: function() {
     return (
       <div className="home">
-        <h1>Movie Search</h1>
+        <div className="jumbotron col-sm-12 text-center">
+          <h1>Movie Search</h1>
+        </div>
         <SearchContainer />
       </div>
     );
