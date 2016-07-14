@@ -11,9 +11,21 @@ let SearchContainer = React.createClass({
   //   'searched': ,
   //   'not-searched': ,
   // }),
+  handleSearchSubmit: function(text) {
+    console.log('search handled');
+    this.setState({
+      searched: true
+    });
+    this.setState({
+      search: text
+    });
+    console.log(text);
+  },
+
   getInitialState: function() {
     return {
-      searched: false
+      searched: false,
+      search: ''
     };
   },
 
@@ -24,7 +36,7 @@ let SearchContainer = React.createClass({
       );
     }
     return (
-      <Search searched={this.state.searched}/>
+      <Search onSearchSubmit={this.handleSearchSubmit}/>
     );
   }
 });
