@@ -1,4 +1,9 @@
-var styles = {
+/*jshint esversion: 6 */
+
+let styles = {
+  body: {
+    background: 'black'
+  },
   transparentBg: {
     background: 'transparent'
   },
