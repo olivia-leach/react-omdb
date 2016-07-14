@@ -14,6 +14,7 @@ let SearchContainer = React.createClass({
   //   'not-searched': ,
   // }),
   handleSearchSubmit: function(text) {
+    let component = this; // cache reference to component's context
     console.log('search handled');
     this.setState({
       searched: true
@@ -26,9 +27,10 @@ let SearchContainer = React.createClass({
         movies: result,
         search: ''
       });
-      console.log(component.movies);
+    }).then(function() {
+      console.log('movies is: ' + component.movies);
+      console.log('search is: ' + component.search);
     });
-
   },
 
   getInitialState: function() {
@@ -42,7 +44,7 @@ let SearchContainer = React.createClass({
   render: function() {
     if (this.state.searched) {
       return (
-        <Results />
+        <Results movies={this.movies}/>
       );
     }
     return (
