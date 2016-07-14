@@ -2,6 +2,8 @@
 
 // Bring in React and ReactDom
 let React = require('react');
+let Results = require('../components/Results.js');
+let Search = require('../components/Search.js');
 // import classnames from 'classnames';
 
 let SearchContainer = React.createClass({
@@ -11,18 +13,18 @@ let SearchContainer = React.createClass({
   // }),
   getInitialState: function() {
     return {
-      searched: true
+      searched: false
     };
   },
 
-  handleSearch: 'test',
-
   render: function() {
+    if (this.state.searched) {
+      return (
+        <Results />
+      );
+    }
     return (
-      <div className="col-md-12 text-center">
-        <h1>{this.handleSearch}</h1>
-        <input className="search-bar" type="text" placeholder="Search for a movie..."/>
-      </div>
+      <Search searched={this.state.searched}/>
     );
   }
 });

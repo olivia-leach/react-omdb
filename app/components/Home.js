@@ -10,9 +10,11 @@ let Home = React.createClass({
     return (
       <div className="home">
         <div className="jumbotron col-sm-12 text-center">
-          <h1>Movie Search</h1>
+          <h1>Search</h1>
         </div>
-        <SearchContainer />
+        <div className="col-md-12 text-center">
+          <SearchContainer />
+        </div>
       </div>
     );
   }
