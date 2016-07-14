@@ -26,10 +26,14 @@ module.exports = {
       {
         test: /\.css$/, // target any file ending in css
         loader: 'css-loader!style-loader' // apply the style and css loaders
+      },
+      {
+        test: /\.scss$/, // target any file ending in css
+        loaders: ["style", "css", "sass"]
       }
     ]
   },
   plugins: [
    HtmlWebPackPluginConfig
 ]
-}
+};
