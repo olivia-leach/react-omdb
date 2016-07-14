@@ -4,6 +4,8 @@
 let React = require('react');
 let Results = require('../components/Results.js');
 let Search = require('../components/Search.js');
+let queryOmdb = require('../utils/OmdbHelpers.js');
+
 // import classnames from 'classnames';
 
 let SearchContainer = React.createClass({
@@ -19,7 +21,7 @@ let SearchContainer = React.createClass({
     this.setState({
       search: text
     });
-    console.log(text);
+    queryOmdb(text.search);
   },
 
   getInitialState: function() {

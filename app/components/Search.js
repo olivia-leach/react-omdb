@@ -2,7 +2,7 @@
 
 // Bring in React and ReactDom
 let React = require('react');
-let ReactDOM = require("react-dom");
+let ReactDOM = require('react-dom');
 
 let Search = React.createClass({
 
