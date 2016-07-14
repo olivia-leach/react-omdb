@@ -22,16 +22,13 @@ let SearchContainer = React.createClass({
       search: text
     });
     queryOmdb(text.search).then(function(result) {
-      this.updateMoviesState(result);
+      component.setState({
+        movies: result,
+        search: ''
+      });
+      console.log(component.movies);
     });
 
-  },
-
-  updateMovieState: function(result) {
-    this.setState({
-      movies: result
-    });
-    console.log(this.movies);
   },
 
   getInitialState: function() {
