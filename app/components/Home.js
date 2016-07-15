@@ -8,13 +8,12 @@ let SearchContainer = require('../containers/SearchContainer.js');
 let Home = React.createClass({
   render: function() {
     return (
-      <div className="home">
-        <div className="jumbotron col-sm-12 text-center">
-          <h1>Search</h1>
+      <div className="col-md-12 text-center">
+        <div className="jumbotron col-md-10 col-md-offset-1">
+          <h1 className="display-3">Super Cool Search</h1>
+          <p className="lead">Enter movie to search for its poster</p>
         </div>
-        <div className="col-md-12 text-center">
-          <SearchContainer />
-        </div>
+        <SearchContainer />
       </div>
     );
   }

@@ -29,9 +29,9 @@ let Search = React.createClass({
     this.props.onSearchSubmit({
       search: search
     });
-    this.setState({
-      search: ''
-    });
+    // this.setState({
+    //   search: 'test'
+    // });
   },
 
   render: function() {

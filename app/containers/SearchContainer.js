@@ -16,20 +16,15 @@ let SearchContainer = React.createClass({
   handleSearchSubmit: function(text) {
     let component = this; // cache reference to component's context
     console.log('search handled');
-    this.setState({
-      searched: true
-    });
-    this.setState({
-      search: text
-    });
     queryOmdb(text.search).then(function(result) {
       component.setState({
         movies: result,
         search: ''
       });
     }).then(function() {
-      console.log('movies is: ' + component.movies);
-      console.log('search is: ' + component.search);
+      component.setState({
+        searched: true
+      });
     });
   },
 
@@ -44,7 +39,10 @@ let SearchContainer = React.createClass({
   render: function() {
     if (this.state.searched) {
       return (
-        <Results movies={this.movies}/>
+        <div>
+          <Search onSearchSubmit={this.handleSearchSubmit}/>
+          <Results movies={this.state.movies}/>
+        </div>
       );
     }
     return (
